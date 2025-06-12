@@ -79,8 +79,8 @@ pub fn encrypt_message(message: &str, public_key_n: &BigUint, public_key_e: &Big
         let mut rng = rand::thread_rng();
         block_size = rng.gen_range(2..(n_bytes - 1)) as usize;
     }
-    
-    
+
+    // 暗号化したメッセージを格納するベクタ
     let mut ciphertexts = Vec::new();
     
     for chunk in message_bytes.chunks(block_size) {
